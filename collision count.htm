@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script type="text/javascript" src="collision count.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable( collision );
+
+        var options = {
+          title: 'Pleasanton Collison Types 1/1/2010 - 9/9/2019',
+          chartArea: {left:'10%',top:'10%', width: '65%', height: '65%'}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 1300px; height: 600px;"></div>
+  </body>
+</html>
